@@ -1,0 +1,20 @@
+[
+  {
+    "accountNumber": "CUR-578047",
+    "accountHolderName": "Prince Master",
+    "type": "Current",
+    "balance": -20000,
+    "creationDate": "2026-06-27T08:29:51.679Z",
+    "status": "Active",
+    "transactionHistory": [
+      {
+        "id": "0a49a0f5-9f26-4dba-b59b-9ada89606b99",
+        "type": "Withdrawal",
+        "amount": 80000,
+        "timestamp": "2026-06-27T08:30:41.147Z",
+        "description": "Withdrawal"
+      }
+    ],
+    "overdraftLimit": 30000
+  }
+]
