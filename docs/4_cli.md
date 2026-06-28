@@ -1,12 +1,12 @@
 # CLI Interface & Demonstration
 
-This guide outlines the steps to build the interactive Command Line Interface (CLI) in `index.ts` and write automated tests using `bun test` in `tests/bank.test.ts`.
+This guide outlines the structure of the interactive Command Line Interface (CLI) in `index.tsx` (using React & Ink) and the automated tests execution using `bun test`.
 
 ---
 
-## Interactive CLI (`index.ts`)
+## Interactive React & Ink CLI (`index.tsx`)
 
-We will build a simple console interface in `index.ts` to interact with our Bank Account Management System in real time. We will use standard input stream parsing or simple prompt loops.
+A stateful terminal dashboard in `index.tsx` using **Ink** (React for CLI). The application handles user input asynchronously, renders formatted tables, and steps the user through input validation menus.
 
 ### Key CLI Operations to Support
 1. Create a Savings Account (input holder name, initial balance, interest rate, minimum balance).
@@ -23,7 +23,7 @@ We will build a simple console interface in `index.ts` to interact with our Bank
 
 ## Automated Tests (`tests/bank.test.ts`)
 
-We will use `bun test` to create unit tests validating the system's requirements.
+Use `bun test` to create unit tests validating the system's requirements.
 
 ### Key Scenarios to Test
 1. **Core Validations**:

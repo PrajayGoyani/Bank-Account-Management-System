@@ -13,7 +13,7 @@ A class-based Bank Account Management System written in TypeScript and powered b
 *   **Freeze/Unfreeze Control**: Allows administrators to freeze or unfreeze accounts to block or permit transaction flows.
 *   **Bank Manager Class**: Coordinates deposits, withdrawals, searching, sorting, and batch interest payouts.
 *   **Data Persistence**: Preserves accounts to a local JSON file database (`bank_data.json`) utilizing the Bun File API, and reconstructs correct subclass prototypes when parsed back.
-*   **Interactive CLI Dashboard**: Includes a user-friendly console application to test banking workflows in real time.
+*   **Interactive CLI Dashboard**: Includes a React-based, fully interactive command-line interface (powered by Ink) to test banking workflows in real time.
 
 ---
 
@@ -43,10 +43,14 @@ Bank-Account-Management-System/
 │   ├── SavingsAccount.ts      # Savings Account Subclass
 │   ├── CurrentAccount.ts      # Current Account Subclass
 │   ├── Bank.ts                # Bank Coordinator Class
-│   └── storage.ts             # Persistence / Serialization Handler
+│   ├── storage.ts             # Persistence / Serialization Handler
+│   └── components/            # React-Ink Terminal UI Components
+│       ├── BankApp.tsx        # Dashboard Main Controller
+│       ├── InteractiveForm.tsx# Multi-step Input Form
+│       └── AccountList.tsx    # Tabular Table View
 ├── tests/                     # Unit Tests
 │   └── bank.test.ts           # Bun Test Suite (16 cases)
-├── index.ts                   # Entrypoint (Interactive CLI Dashboard)
+├── index.tsx                  # Entrypoint (Interactive CLI Dashboard)
 ├── tsconfig.json              # TypeScript compiler configuration
 └── package.json               # Package dependencies configuration
 ```
@@ -72,7 +76,7 @@ bun install
 Start the interactive CLI dashboard:
 
 ```bash
-bun run index.ts
+bun start
 ```
 
 *The CLI automatically loads any existing accounts from `bank_data.json` at startup and auto-saves the database upon exiting.*
