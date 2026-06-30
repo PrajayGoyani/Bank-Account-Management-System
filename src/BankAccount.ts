@@ -16,9 +16,6 @@ export abstract class BankAccount {
     status: AccountStatus = "Active",
     transactionHistory: Transaction[] = []
   ) {
-    if (initialBalance < 0) {
-      throw new Error("Initial balance cannot be negative.");
-    }
     this.accountNumber = accountNumber;
     this.accountHolderName = accountHolderName;
     this._balance = initialBalance;

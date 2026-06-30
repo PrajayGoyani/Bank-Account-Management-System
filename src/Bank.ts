@@ -20,6 +20,12 @@ export class Bank {
     return this.accounts.find(acc => acc.accountNumber === accountNumber);
   }
 
+  checkBalance(initialBalance: number) {
+    if (initialBalance < 0) {
+      throw new Error("Initial balance cannot be negative.");
+    }
+  }
+
   /**
    * Create a new Savings Account
    */
@@ -32,6 +38,7 @@ export class Bank {
     if (!holderName.trim()) {
       throw new Error("Account holder name cannot be empty.");
     }
+    this.checkBalance(initialBalance);
     const accountNumber = this.generateAccountNumber("SAV");
     const account = new SavingsAccount(
       accountNumber,
@@ -55,6 +62,7 @@ export class Bank {
     if (!holderName.trim()) {
       throw new Error("Account holder name cannot be empty.");
     }
+    this.checkBalance(initialBalance);
     const accountNumber = this.generateAccountNumber("CUR");
     const account = new CurrentAccount(
       accountNumber,
